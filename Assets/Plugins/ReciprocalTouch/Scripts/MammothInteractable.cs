@@ -4,13 +4,22 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+// [RequireComponent(typeof(Rigidbody))]
 public class MammothInteractable : MonoBehaviour
 {
     private List<Transform> _contacts = new List<Transform>();
     public bool DrawGizmoSpheres;
 
     public MammothRenderer MammothRenderer;
+
+    void Start()
+    {
+        if(MammothRenderer == null)
+            Debug.LogWarning("MammothRenderer is not set - Expect errors on collision with Mammoth objects");
+
+        if(GetComponentInParent<Rigidbody>() == null)
+            Debug.LogWarning("RigidBody not found in the GameObject or its parent - Expect to not receive haptic feedback");
+    }
 
     public void AddContactPoint(Transform childTransform)
     {
