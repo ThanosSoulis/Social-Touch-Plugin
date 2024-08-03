@@ -387,7 +387,7 @@ Transform:
   m_GameObject: {fileID: 444602828}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.15, y: 0.1, z: 0.15}
+  m_LocalPosition: {x: 0.15, y: 0.1, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb48a2fc77f0e694d88b85689298b169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DrawGizmoSpheres: 0
+  DrawGizmoSpheres: 1
   MammothRenderer: {fileID: 1686148630}
 --- !u!54 &444602834
 Rigidbody:
@@ -759,7 +759,7 @@ Transform:
   m_GameObject: {fileID: 864142378}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: 0.1, z: 0.15}
+  m_LocalPosition: {x: -0.15, y: 0.1, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -853,7 +853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb48a2fc77f0e694d88b85689298b169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DrawGizmoSpheres: 0
+  DrawGizmoSpheres: 1
   MammothRenderer: {fileID: 1686148630}
 --- !u!54 &864142384
 Rigidbody:
@@ -1216,7 +1216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930791089659126269, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9862894
+      value: -0.9862893
       objectReference: {fileID: 0}
     - target: {fileID: 930791089659126269, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1224,7 +1224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930791089659126269, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.018410495
+      value: -0.018410493
       objectReference: {fileID: 0}
     - target: {fileID: 930791089659126269, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1244,7 +1244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930791089919532134, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9862894
+      value: -0.9862893
       objectReference: {fileID: 0}
     - target: {fileID: 930791089919532134, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1252,7 +1252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930791089919532134, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.018410495
+      value: -0.018410493
       objectReference: {fileID: 0}
     - target: {fileID: 930791089919532134, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1440,7 +1440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930791090114251992, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99078
+      value: 0.99077994
       objectReference: {fileID: 0}
     - target: {fileID: 930791090114251992, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1448,7 +1448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930791090114251992, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.1197139
+      value: -0.119713895
       objectReference: {fileID: 0}
     - target: {fileID: 930791090114251992, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1737,6 +1737,14 @@ PrefabInstance:
     - target: {fileID: 930791090669861589, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.08276375
+      objectReference: {fileID: 0}
+    - target: {fileID: 930791090721722080, guid: cef70925623ea674f8b14091b5556989, type: 3}
+      propertyPath: disableOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 930791090721722080, guid: cef70925623ea674f8b14091b5556989, type: 3}
+      propertyPath: FreezeHandState
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 930791090721722081, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalScale.x
@@ -3364,7 +3372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930791090837919203, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99078
+      value: 0.99077994
       objectReference: {fileID: 0}
     - target: {fileID: 930791090837919203, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3372,7 +3380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930791090837919203, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.1197139
+      value: -0.119713895
       objectReference: {fileID: 0}
     - target: {fileID: 930791090837919203, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.z
@@ -5526,6 +5534,14 @@ PrefabInstance:
       propertyPath: LeapHand.Fingers.Array.data[4].bones.Array.data[3].PrevJoint.z
       value: 0.05854322
       objectReference: {fileID: 0}
+    - target: {fileID: 958526034409490303, guid: cef70925623ea674f8b14091b5556989, type: 3}
+      propertyPath: disableOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 958526034409490303, guid: cef70925623ea674f8b14091b5556989, type: 3}
+      propertyPath: FreezeHandState
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -5672,7 +5688,7 @@ MonoBehaviour:
   DefaultInterpolationSeparation: 0.00035
   MinimumFrequency: 60
   MaximumFrequency: 200
-  DynamicCapping: 1
+  DynamicCapping: 0
   UpdateRate: 0.1
   PointBufferSize: 2048
 --- !u!114 &1686148631
@@ -5790,7 +5806,7 @@ Transform:
   m_GameObject: {fileID: 1877247329}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1, z: 0.15}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5882,7 +5898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb48a2fc77f0e694d88b85689298b169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DrawGizmoSpheres: 0
+  DrawGizmoSpheres: 1
   MammothRenderer: {fileID: 1686148630}
 --- !u!54 &1877247335
 Rigidbody:
