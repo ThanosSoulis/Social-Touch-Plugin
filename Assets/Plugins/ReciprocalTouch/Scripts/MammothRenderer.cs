@@ -149,11 +149,16 @@ public class MammothRenderer : MonoBehaviour
 
     public void AddContactPoint(Transform childTransform)
     {
+        if(childTransform == null) return;
+
         _contacts.Add(childTransform);
     }
 
     public void RemoveContactPoint(Transform childTransform)
     {
+        if(childTransform == null || !_contacts.Contains(childTransform)) 
+            return;
+        
         _contacts.Remove(childTransform);
     }
 
