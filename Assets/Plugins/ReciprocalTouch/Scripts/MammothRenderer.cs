@@ -162,6 +162,11 @@ public class MammothRenderer : MonoBehaviour
         _contacts.Remove(childTransform);
     }
 
+    public bool IsRendererClear() 
+    {
+        return _contacts.Count == 0;
+    }
+
     public void Disconnect()
     {
         _contacts.Clear();
