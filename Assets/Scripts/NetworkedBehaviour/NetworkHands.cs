@@ -1,5 +1,6 @@
 // Credits to https://docs.ultraleap.com/xr-and-tabletop/xr/unity/plugin/features/networking-hands.html
 
+using System;
 using System.Linq;
 using Leap;
 using Leap.Unity;
@@ -10,6 +11,7 @@ using Unity.Netcode;
 public class NetworkHands : NetworkBehaviour
 {
     [SerializeField] private bool isAutoInstantiated = true;
+    [SerializeField] private bool debugDrawForwardDirection = true;
 
     [Header("Hand Models Renderer")]
     [SerializeField] private GameObject handsRendererRoot;
@@ -33,7 +35,24 @@ public class NetworkHands : NetworkBehaviour
         // Find the LeapProvider as a child member
         _leapProvider = GetComponentInChildren<LeapProvider>();
     }
+    private void DrawDebugArrow(Vector3 start, Vector3 dir, Color color)
+    {
+        // Draw the main line of the arrow
+        Debug.DrawRay(start, dir*0.5f, color);
+
+        // Draw the end parts of the arrow
+        Vector3 right = Quaternion.LookRotation(dir) * Quaternion.Euler(0,180+20,0) * new Vector3(0,0,1);
+        Vector3 left = Quaternion.LookRotation(dir) * Quaternion.Euler(0,180-20,0) * new Vector3(0,0,1);
+        Debug.DrawRay(start + dir*0.5f, right * 0.25f, color);
+        Debug.DrawRay(start + dir*0.5f, left * 0.25f, color);
+    }
     
+    private void Update()
+    {
+        if(debugDrawForwardDirection)
+            DrawDebugArrow(transform.localPosition, transform.forward, Color.red);
+    }
+
     private void AssignRendererHands()
     {
         var handModels = handsRendererRoot.GetComponentsInChildren<HandModelBase>(true);

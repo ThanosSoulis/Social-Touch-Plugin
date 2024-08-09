@@ -231,7 +231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &212097279
 Transform:
   m_ObjectHideFlags: 0
@@ -1541,6 +1541,38 @@ PrefabInstance:
     - target: {fileID: 303390808100349811, guid: bf857dc798c3e4e5281d8ec74ef8bcc2, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 404640306642315804, guid: bf857dc798c3e4e5281d8ec74ef8bcc2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99078
+      objectReference: {fileID: 0}
+    - target: {fileID: 404640306642315804, guid: bf857dc798c3e4e5281d8ec74ef8bcc2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.1197139
+      objectReference: {fileID: 0}
+    - target: {fileID: 404640307552804354, guid: bf857dc798c3e4e5281d8ec74ef8bcc2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.9862894
+      objectReference: {fileID: 0}
+    - target: {fileID: 404640307552804354, guid: bf857dc798c3e4e5281d8ec74ef8bcc2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.018410495
+      objectReference: {fileID: 0}
+    - target: {fileID: 404640307805086617, guid: bf857dc798c3e4e5281d8ec74ef8bcc2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.9862894
+      objectReference: {fileID: 0}
+    - target: {fileID: 404640307805086617, guid: bf857dc798c3e4e5281d8ec74ef8bcc2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.018410495
+      objectReference: {fileID: 0}
+    - target: {fileID: 404640307999519527, guid: bf857dc798c3e4e5281d8ec74ef8bcc2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99078
+      objectReference: {fileID: 0}
+    - target: {fileID: 404640307999519527, guid: bf857dc798c3e4e5281d8ec74ef8bcc2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.1197139
       objectReference: {fileID: 0}
     - target: {fileID: 954029838033384408, guid: bf857dc798c3e4e5281d8ec74ef8bcc2, type: 3}
       propertyPath: _leapProvider
