@@ -24,13 +24,11 @@ public class MammothInteractable : MonoBehaviour
     public void AddContactPoint(Transform childTransform)
     {
         MammothRenderer.AddContactPoint(childTransform);
-        //_contacts.Add(childTransform);
     }
 
     public void RemoveContactPoint(Transform childTransform)
     {
         MammothRenderer.RemoveContactPoint(childTransform);
-        //_contacts.Remove(childTransform);
     }
 
     void OnDrawGizmosSelected()
@@ -46,11 +44,6 @@ public class MammothInteractable : MonoBehaviour
             Gizmos.DrawSphere(_contacts[i].position, 0.005f);
 
         }
-    }
-
-    public void Disconnect()
-    {
-        _contacts.Clear();
     }
 
     public List<Vector3> FetchPoints()

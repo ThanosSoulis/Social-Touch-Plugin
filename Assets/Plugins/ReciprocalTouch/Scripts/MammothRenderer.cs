@@ -27,6 +27,12 @@ public class MammothRenderer : MonoBehaviour
     public float UpdateRate = 0.1f;
     private float _t;
 
+    public bool _leftHandActive { private get; set; }
+    public bool _rightHandActive { private get; set; }
+    
+    private bool IsActiveHandDetected => _leftHandActive || _rightHandActive;
+
+
     /*[Header("Filters")]
     public float SmoothingSeparation = 0.007f;
     public bool MovingAverage;
@@ -74,16 +80,19 @@ public class MammothRenderer : MonoBehaviour
 
         if (_t > UpdateRate)
         {
-            GetPointSnapshot();
-            if (_bufferPointsCount > 0)
-            {
-                ShortestPath();
-            }
-            else
-            {
-                _pathSensation.SetEmptyPath();
-            }
             _t -= UpdateRate;
+
+            if (IsActiveHandDetected)
+            {
+                // Gets the contacts happening this frame
+                GetPointSnapshot();
+                if (_bufferPointsCount > 0)
+                {
+                    ShortestPath();
+                    return;
+                }
+            }
+            _pathSensation.SetEmptyPath();
         }
     }
 
@@ -109,7 +118,7 @@ public class MammothRenderer : MonoBehaviour
 
         //Debug.Log("Frequency: " + (40000f / (distance/interpolationSeparation)));
 
-        // Get the number ofinterpolated points to use per edge
+        // Get the number of interpolated points to use per edge
         _bufferEdgeIncrements = MathT.GetEdgeIncrements(_bufferEdgeIncrements, _bufferPoints, _bufferPointsCount, interpolationSeparation);
 
         // Send to UltraHaptics
@@ -141,6 +150,13 @@ public class MammothRenderer : MonoBehaviour
     private void GetPointSnapshot()
     {
         _bufferPointsCount = _contacts.Count;
+
+        if (_bufferPoints.Length < _bufferPointsCount)
+        {
+            Debug.LogError($"Number of contacts is bigger than the expected [{PointBufferSize}]");
+            return;
+        }
+
         for (int i = 0; i < _bufferPointsCount; i++)
         {
             _bufferPoints[i] = _contacts[i].position;
@@ -171,12 +187,11 @@ public class MammothRenderer : MonoBehaviour
     {
         _contacts.Clear();
     }
-
     void OnDrawGizmosSelected()
     {
-        if (VizualiseInterpolation == true)
+        if (VizualiseInterpolation)
         {
-            Gizmos.color = Color.blue;
+            Gizmos.color = Color.yellow;
 
             for (int i = 0; i < twoOptPoints.Length - 1; i++)
             {
