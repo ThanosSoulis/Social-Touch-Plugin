@@ -23,12 +23,12 @@ public class MammothInteractable : MonoBehaviour
 
     public void AddContactPoint(Transform childTransform)
     {
-        MammothRenderer.AddContactPoint(childTransform);
+        MammothRenderer?.AddContactPoint(childTransform);
     }
 
     public void RemoveContactPoint(Transform childTransform)
     {
-        MammothRenderer.RemoveContactPoint(childTransform);
+        MammothRenderer?.RemoveContactPoint(childTransform);
     }
 
     void OnDrawGizmosSelected()
