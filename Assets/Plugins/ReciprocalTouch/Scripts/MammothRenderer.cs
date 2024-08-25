@@ -8,7 +8,7 @@ public class MammothRenderer : MonoBehaviour
     private PathSensation _pathSensation;
 
     public Transform ServiceProvider;
-    private Vector3 UltraLeapAlignment = new Vector3(0f, 0.1210f, 0f);
+    private static readonly Vector3 UltraLeapAlignment =  new (0f, 0.1210f, 0f);
 
     private float MinSmoothingSeparation = 0.008f;
 
@@ -145,7 +145,7 @@ public class MammothRenderer : MonoBehaviour
 
     private void TransformPosition(Vector3[] contacts, int i)
     {
-        contacts[i] = new Vector3(contacts[i].x, -(-contacts[i].z - UltraLeapAlignment.y), contacts[i].y);
+        contacts[i] = new Vector3(contacts[i].x, contacts[i].z + UltraLeapAlignment.y, contacts[i].y);
     }
     private void GetPointSnapshot()
     {
