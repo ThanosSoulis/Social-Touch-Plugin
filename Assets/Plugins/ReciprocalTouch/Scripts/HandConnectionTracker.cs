@@ -9,6 +9,7 @@ public class HandConnectionTracker : HandTransitionBehavior
     private MammothRenderer _mammothRenderer;
     private HandBinder _handBinder;
     private XRInputModalityManager _xrInputModalityManager;
+    private XRHandMeshController _leftHandMeshController, _rightHandMeshController;
 
     private void Start()
     {
@@ -22,33 +23,10 @@ public class HandConnectionTracker : HandTransitionBehavior
         if(_xrInputModalityManager == null)
             Debug.LogWarning("XR Input Modality Manager is not set - Expect errors on hand tracking status changes");
 
-        var rightHandTrackingEvents = _xrInputModalityManager.rightHand.GetComponentInChildren<XRHandTrackingEvents>();
-        var leftHandTrackingEvents = _xrInputModalityManager.leftHand.GetComponentInChildren<XRHandTrackingEvents>();
-    
-        rightHandTrackingEvents.poseUpdated.AddListener(PoseDiff);
+        _leftHandMeshController = _xrInputModalityManager.leftHand.GetComponentInChildren<XRHandMeshController>();
+        _rightHandMeshController = _xrInputModalityManager.rightHand.GetComponentInChildren<XRHandMeshController>();
     }
 
-    private void PoseDiff(Pose pose)
-    {
-        if(_handBinder == null)
-            return;
-
-        Pose diff = Pose.identity;
-        switch (_handBinder.Chirality)
-        {
-            case Chirality.Left:
-                break;
-                diff =pose.To(_handBinder.LeapHand.GetPalmPose());
-                Debug.Log("Left Hand Diff Pos:"+diff.position+" Rot:"+diff.rotation);
-                break;    
-                
-            case Chirality.Right:
-                diff =pose.To(_handBinder.LeapHand.GetPalmPose());
-                Debug.Log("Right Hand Diff Pos:"+diff.position+" Rot:"+diff.rotation);
-                break;
-        }
-        
-    }
 
     protected override void HandReset()
     {
@@ -70,11 +48,13 @@ public class HandConnectionTracker : HandTransitionBehavior
         switch (_handBinder.Chirality)
         {
             case Chirality.Left:
-                _xrInputModalityManager.leftHand.SetActive(false);
+                // _xrInputModalityManager.leftHand.SetActive(false);
+                _leftHandMeshController.handMeshRenderer.enabled = false;
                 break;    
                 
             case Chirality.Right:
-                _xrInputModalityManager.rightHand.SetActive(false);
+                // _xrInputModalityManager.rightHand.SetActive(false);
+                _rightHandMeshController.handMeshRenderer.enabled = false;
                 break;
         }
     }
@@ -87,11 +67,11 @@ public class HandConnectionTracker : HandTransitionBehavior
         switch (_handBinder.Chirality)
         {
             case Chirality.Left:
-                _xrInputModalityManager.leftHand.SetActive(true);
+                 _leftHandMeshController.handMeshRenderer.enabled = true;
                 break;    
                 
             case Chirality.Right:
-                _xrInputModalityManager.rightHand.SetActive(true);
+                 _leftHandMeshController.handMeshRenderer.enabled = true;
                 break;
         }
     }
