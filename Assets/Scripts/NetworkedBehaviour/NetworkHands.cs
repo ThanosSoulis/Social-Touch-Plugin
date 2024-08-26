@@ -13,15 +13,17 @@ public class NetworkHands : NetworkBehaviour
     [SerializeField] private bool isAutoInstantiated = true;
     [SerializeField] private bool debugDrawForwardDirection = true;
 
+    [SerializeField] private LeapProvider _leapProvider;
+    
     [Header("Hand Models Renderer")]
     [SerializeField] private GameObject handsRendererRoot;
 
     [Header("Hand Models Interactable")]
     [SerializeField] private GameObject handsInteractableRoot;
     
+    
     private HandModelBase leftModel = null, rightModel = null;
     
-    private LeapProvider _leapProvider;
 
     private VectorHand _leftVector = new VectorHand(), _rightVector = new VectorHand();
     private Hand _leftHand = new Hand(), _rightHand = new Hand();
@@ -33,7 +35,8 @@ public class NetworkHands : NetworkBehaviour
     private void Awake()
     {
         // Find the LeapProvider as a child member
-        _leapProvider = GetComponentInChildren<LeapProvider>();
+        if(_leapProvider == null)
+            _leapProvider = GetComponentInChildren<LeapProvider>();
     }
     private void DrawDebugArrow(Vector3 start, Vector3 dir, Color color)
     {
