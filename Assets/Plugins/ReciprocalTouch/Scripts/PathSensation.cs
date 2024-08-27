@@ -139,7 +139,7 @@ public class PathSensation : MonoBehaviour
             }
             if (DebugOn)
             {
-                Debug.Log("Post: " + _p.X + ", " + _p.Y + ", " + _p.Z);
+                Debug.Log("Post: " + _p.X.ToString("F2") + ", " + _p.Y.ToString("F2") + ", " + _p.Z.ToString("F2"));
             }
         }
         catch (Exception e)
