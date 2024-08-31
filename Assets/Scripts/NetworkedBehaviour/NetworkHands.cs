@@ -21,10 +21,12 @@ public class NetworkHands : NetworkBehaviour
     [Header("Hand Models Interactable")]
     [SerializeField] private GameObject handsInteractableRoot;
     
+    [Header("Local XR Components")]
+    [SerializeField] private GameObject[] components;
+    [SerializeField] private MonoBehaviour[] scripts;
+
     
     private HandModelBase leftModel = null, rightModel = null;
-    
-
     private VectorHand _leftVector = new VectorHand(), _rightVector = new VectorHand();
     private Hand _leftHand = new Hand(), _rightHand = new Hand();
 
@@ -75,6 +77,15 @@ public class NetworkHands : NetworkBehaviour
         // Disable renderer hands
         handsRendererRoot.SetActive(false);
     }
+
+    private void DisableXRComponents()
+    {
+        foreach (var component in components)
+            component.SetActive(false);
+
+        foreach (var script in scripts)
+            script.enabled = false;
+    }
     
     public override void OnNetworkSpawn()
     {
@@ -100,6 +111,9 @@ public class NetworkHands : NetworkBehaviour
             
             // We are not the owners, we should be using the Interactable hands
             AssignInteractableHands();
+            
+            // We need to shut down the XR Components if it is not the local player
+            DisableXRComponents();
             
             // We are going to be sent hand data for these hands.
             // We should control the hands through network, not from a LeapProvider
