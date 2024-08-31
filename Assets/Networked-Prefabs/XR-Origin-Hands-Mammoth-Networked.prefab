@@ -265,7 +265,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749467282979940344}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00707976, y: -0.018410495, z: 0.16384223, w: -0.9862894}
+  m_LocalRotation: {x: -0.00707976, y: -0.018410493, z: 0.16384223, w: -0.9862893}
   m_LocalPosition: {x: -0.04179948, y: -1.9706458e-17, z: -6.328271e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1755,7 +1755,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3443948593373745016}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.044873927, y: -0.1197139, z: 0.04483306, w: 0.99078}
+  m_LocalRotation: {x: -0.044873927, y: -0.119713895, z: 0.04483306, w: 0.99077994}
   m_LocalPosition: {x: -0.0513828, y: -6.328271e-17, z: 2.4424906e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2034,7 +2034,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3939971042985537164}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.044873927, y: -0.1197139, z: 0.04483306, w: 0.99078}
+  m_LocalRotation: {x: -0.044873927, y: -0.119713895, z: 0.04483306, w: 0.99077994}
   m_LocalPosition: {x: -0.0513828, y: -6.328271e-17, z: 2.4424906e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2137,7 +2137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3951755360081079681}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00707976, y: -0.018410495, z: 0.16384223, w: -0.9862894}
+  m_LocalRotation: {x: -0.00707976, y: -0.018410493, z: 0.16384223, w: -0.9862893}
   m_LocalPosition: {x: -0.04179948, y: -1.9706458e-17, z: -6.328271e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5252,7 +5252,7 @@ MonoBehaviour:
   editTimePose: 1
   _inputLeapProvider: {fileID: 383918571069787020}
   dataUpdateMode: 0
-  passthroughOnly: 1
+  passthroughOnly: 0
   _xrInputModalityManager: {fileID: 0}
 --- !u!114 &1614525136990023407
 MonoBehaviour:
@@ -6186,7 +6186,7 @@ MonoBehaviour:
     reference: {fileID: 7862146139406883366}
   Chirality: 1
   LeapHand:
-    FrameId: 0
+    FrameId: 610525
     Id: 0
     Fingers:
     - bones:
@@ -6627,7 +6627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 589729663
+  GlobalObjectIdHash: 1366750959
   InScenePlacedSourceGlobalObjectIdHash: 1366750959
   DeferredDespawnTick: 0
   Ownership: 1
@@ -11422,7 +11422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930791089659126269, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9862894
+      value: -0.9862893
       objectReference: {fileID: 0}
     - target: {fileID: 930791089659126269, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.x
@@ -11430,7 +11430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930791089659126269, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.018410495
+      value: -0.018410493
       objectReference: {fileID: 0}
     - target: {fileID: 930791089659126269, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.z
@@ -11450,7 +11450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930791089919532134, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9862894
+      value: -0.9862893
       objectReference: {fileID: 0}
     - target: {fileID: 930791089919532134, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.x
@@ -11458,7 +11458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930791089919532134, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.018410495
+      value: -0.018410493
       objectReference: {fileID: 0}
     - target: {fileID: 930791089919532134, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.z
@@ -11646,7 +11646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930791090114251992, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99078
+      value: 0.99077994
       objectReference: {fileID: 0}
     - target: {fileID: 930791090114251992, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.x
@@ -11654,7 +11654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930791090114251992, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.1197139
+      value: -0.119713895
       objectReference: {fileID: 0}
     - target: {fileID: 930791090114251992, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.z
@@ -13794,7 +13794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930791090837919203, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99078
+      value: 0.99077994
       objectReference: {fileID: 0}
     - target: {fileID: 930791090837919203, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.x
@@ -13802,7 +13802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930791090837919203, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.1197139
+      value: -0.119713895
       objectReference: {fileID: 0}
     - target: {fileID: 930791090837919203, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: m_LocalRotation.z
@@ -14438,7 +14438,7 @@ PrefabInstance:
       objectReference: {fileID: 8956517222077829423}
     - target: {fileID: 958526034409490300, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: LeapHand.FrameId
-      value: 0
+      value: 610525
       objectReference: {fileID: 0}
     - target: {fileID: 958526034409490300, guid: cef70925623ea674f8b14091b5556989, type: 3}
       propertyPath: LeapHand.Arm.Width
@@ -16242,7 +16242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c86a34f8e287c4e8d259d361fe8202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DebugOn: 1
+  DebugOn: 0
   ManualAlignmentX: 0
   ManualAlignmentY: 0
   ManualAlignmentZ: 0
