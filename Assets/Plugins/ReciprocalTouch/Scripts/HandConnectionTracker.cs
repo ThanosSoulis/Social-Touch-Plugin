@@ -71,7 +71,7 @@ public class HandConnectionTracker : HandTransitionBehavior
                 break;    
                 
             case Chirality.Right:
-                 _leftHandMeshController.handMeshRenderer.enabled = true;
+                 _rightHandMeshController.handMeshRenderer.enabled = true;
                 break;
         }
     }
