@@ -1,3 +1,5 @@
+// This script includes part of the HandEnableDisable created by Ultraleap, Inc. 2011-2024.
+
 using Leap.Unity;
 using Leap.Unity.HandsModule;
 using UnityEngine;
@@ -11,6 +13,24 @@ public class HandConnectionTracker : HandTransitionBehavior
     private XRInputModalityManager _xrInputModalityManager;
     private XRHandMeshController _leftHandMeshController, _rightHandMeshController;
 
+    [Tooltip("When enabled, freezes the hand in its current active state")]
+    public bool FreezeHandState = false;
+
+    protected override void Awake()
+    {
+        // Suppress Warnings Related to Kinematic Rigidbodies not supporting Continuous Collision Detection
+        Rigidbody[] bodies = GetComponentsInChildren<Rigidbody>();
+        foreach (Rigidbody body in bodies)
+        {
+            if (body.isKinematic && body.collisionDetectionMode == CollisionDetectionMode.Continuous)
+            {
+                body.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+            }
+        }
+
+        base.Awake();
+    }
+    
     private void Start()
     {
         _handBinder = GetComponent<HandBinder>();
@@ -25,19 +45,35 @@ public class HandConnectionTracker : HandTransitionBehavior
 
         _leftHandMeshController = _xrInputModalityManager.leftHand.GetComponentInChildren<XRHandMeshController>();
         _rightHandMeshController = _xrInputModalityManager.rightHand.GetComponentInChildren<XRHandMeshController>();
+        
+        HideXRIHand();
     }
 
 
     protected override void HandReset()
     {
-        HideXRIHand();
+        if (FreezeHandState)
+        {
+            return;
+        }
+
+        gameObject.SetActive(true);
         MammothRendererActivate();
+
+        HideXRIHand();  
     }
 
     protected override void HandFinish()
     {
-        ShowXRIHand();
+        if (FreezeHandState)
+        {
+            return;
+        }
+        
+        gameObject.SetActive(false);
         MammothRendererDeactivate();
+
+        ShowXRIHand();
     }
 
     private void HideXRIHand()
@@ -49,14 +85,18 @@ public class HandConnectionTracker : HandTransitionBehavior
         {
             case Chirality.Left:
                 // _xrInputModalityManager.leftHand.SetActive(false);
-                _leftHandMeshController.handMeshRenderer.enabled = false;
+                if(gameObject.activeInHierarchy)
+                    _leftHandMeshController.handMeshRenderer.enabled = false;
                 break;    
                 
             case Chirality.Right:
                 // _xrInputModalityManager.rightHand.SetActive(false);
-                _rightHandMeshController.handMeshRenderer.enabled = false;
+                if(gameObject.activeInHierarchy)
+                    _rightHandMeshController.handMeshRenderer.enabled = false;
                 break;
         }
+
+        // Debug.Log("Hide from "+ _handBinder.Chirality);
     }
 
     private void ShowXRIHand()
@@ -67,13 +107,16 @@ public class HandConnectionTracker : HandTransitionBehavior
         switch (_handBinder.Chirality)
         {
             case Chirality.Left:
-                 _leftHandMeshController.handMeshRenderer.enabled = true;
+                if(!gameObject.activeInHierarchy)
+                    _leftHandMeshController.handMeshRenderer.enabled = true;
                 break;    
                 
             case Chirality.Right:
-                 _rightHandMeshController.handMeshRenderer.enabled = true;
+                if(!gameObject.activeInHierarchy)
+                    _rightHandMeshController.handMeshRenderer.enabled = true;
                 break;
         }
+        // Debug.Log("Show from "+ _handBinder.Chirality);
     }
 
     private void MammothRendererActivate()
