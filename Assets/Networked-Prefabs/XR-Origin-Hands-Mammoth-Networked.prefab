@@ -6476,7 +6476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1178791450436251564, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_CameraYOffset
-      value: 1.5
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 1178791450436251564, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_RequestedTrackingOriginMode
@@ -6680,6 +6680,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 987e6761898574bb9970ec385a086425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recenterButton: 32
+  target: {fileID: 0}
 --- !u!114 &4596994863640782791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16252,6 +16254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableOnAwake: 0
+  FreezeHandState: 0
 --- !u!4 &9064044160519508204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 930791091687786406, guid: cef70925623ea674f8b14091b5556989, type: 3}
@@ -16318,6 +16321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableOnAwake: 0
+  FreezeHandState: 0
 --- !u!1001 &9139407454820817640
 PrefabInstance:
   m_ObjectHideFlags: 0
