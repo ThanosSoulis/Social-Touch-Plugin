@@ -2028,9 +2028,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 927309121262695183, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+    - target: {fileID: 657184242222895507, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 657184243640684908, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 927309121262695183, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1194331814523853121, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: target
@@ -2142,14 +2150,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717209007007425347, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1800725127586568702, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1820897918385990095, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
-      propertyPath: m_RequestedTrackingOriginMode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2218496723442559053, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
@@ -2208,11 +2212,19 @@ PrefabInstance:
       propertyPath: m_LocalRotation.y
       value: -0.119713895
       objectReference: {fileID: 0}
+    - target: {fileID: 3421079552115229881, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3616834141250944902, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: sceneCamera
       value: 
       objectReference: {fileID: 963194227}
     - target: {fileID: 3910408762165081306, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4911947107372535036, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -2226,7 +2238,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6355494128053973299, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6468442521412095314, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6686889412772800895, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_IsActive
