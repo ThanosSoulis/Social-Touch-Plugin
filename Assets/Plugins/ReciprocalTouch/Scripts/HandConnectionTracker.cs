@@ -49,6 +49,10 @@ public class HandConnectionTracker : HandTransitionBehavior
         HideXRIHand();
     }
 
+    void FixedUpdate()
+    {
+        HideXRIHand();
+    }
 
     protected override void HandReset()
     {
