@@ -8,14 +8,14 @@ public class ClientStudyController : NetworkBehaviour
     // Panels have a size of 8.
     [SerializeField] private GameObject[] participantPanels;
 
-    private void Start()
+    private void OnEnable()
     {
         _serverController = FindAnyObjectByType<ServerStudyController>();
     }
 
-    public override void OnNetworkSpawn()
+    protected override void OnNetworkPostSpawn()
     {
-        base.OnNetworkSpawn();
+        base.OnNetworkPostSpawn();
 
         // Disable the Canvas if we are not the server
         if (!IsServer)
@@ -36,7 +36,7 @@ public class ClientStudyController : NetworkBehaviour
             return;
         }
 
-        Debug.Log("Received an OpenPanel:" + clientID + " Panel ID: " + panelID + " Participant: " + participant.ToString());
+        Debug.Log("Received an OpenPanel | Client ID" + clientID + " Panel ID: " + panelID + " Participant: " + participant.ToString());
 
 
         // Disable all Panels except the correct image panel one
