@@ -24,7 +24,7 @@ public class TeleportPlayersManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T)) TeleportPlayers();
     }
 
-    private void TeleportPlayers()
+    public void TeleportPlayers()
     {
         // Only allow the server to teleport players
         if(_networkManager.IsClient)

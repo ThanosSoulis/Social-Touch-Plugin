@@ -53,6 +53,8 @@ public class ClientStudyController : NetworkBehaviour
         // Disable all Panels
         for (int i = 0; i < participantPanels.Length; i++)
             participantPanels[i].SetActive(false);
+
+        Debug.Log("Closed All Panels");
     }
 
 }

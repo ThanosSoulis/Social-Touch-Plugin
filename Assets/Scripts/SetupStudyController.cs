@@ -8,7 +8,9 @@ public class SetupStudyController : MonoBehaviour
     [SerializeField] Button[] ParticipantBButtons;
 
     [SerializeField] Button ClosePanelsButton;
+    [SerializeField] Button TeleportParticipantsButton;
     private ServerStudyController _serverController;
+    private TeleportPlayersManager _teleportPlayersManager;
     
     void OnEnable()
     {
@@ -19,11 +21,19 @@ public class SetupStudyController : MonoBehaviour
             return;
         }
 
+        _teleportPlayersManager = FindAnyObjectByType<TeleportPlayersManager>();
+        if(_teleportPlayersManager.IsUnityNull())
+        {
+            Debug.LogError("Teleport Players Manager not found! : Cannot setup Participant Buttons");
+            return;
+        }
+
 
         SetupParticipantButtons(Participant.A, ParticipantAButtons);
         SetupParticipantButtons(Participant.B, ParticipantBButtons);
 
         ClosePanelsButton.onClick.AddListener(()=> {_serverController.CloseAllPanels(Participant.A); _serverController.CloseAllPanels(Participant.B);});
+        TeleportParticipantsButton.onClick.AddListener(()=> _teleportPlayersManager.TeleportPlayers());
     }
 
     private void SetupParticipantButtons(Participant participant, Button[] buttons)

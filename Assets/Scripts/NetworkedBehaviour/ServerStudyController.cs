@@ -32,7 +32,7 @@ public class ServerStudyController : MonoBehaviour
             else if (participant == Participant.B && clientID % 2 != 0)
                 return client;
 
-            Debug.LogWarning("Expected -- Participant " + participant.ToString() + "is not running on ClientID:" + clientID);
+            Debug.LogWarning("Expected -- Participant " + participant.ToString() + " is not running on ClientID: " + clientID);
         }
         return null;
     }
