@@ -3,14 +3,14 @@ using Unity.Netcode;
 
 public class ClientStudyController : NetworkBehaviour
 {
-    private ServerStudyController _serverController;
+    private SetupStudyController _setupController;
 
     // Panels have a size of 8.
     [SerializeField] private GameObject[] participantPanels;
 
     private void OnEnable()
     {
-        _serverController = FindAnyObjectByType<ServerStudyController>();
+        _setupController = FindAnyObjectByType<SetupStudyController>();
     }
 
     protected override void OnNetworkPostSpawn()
@@ -20,7 +20,7 @@ public class ClientStudyController : NetworkBehaviour
         // Disable the Canvas if we are not the server
         if (!IsServer)
         {
-            _serverController.gameObject.SetActive(false);
+            _setupController.gameObject.SetActive(false);
         }
     }
 
