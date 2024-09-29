@@ -2920,6 +2920,7 @@ MonoBehaviour:
   - {fileID: 56578204}
   - {fileID: 1873863130}
   ClosePanelsButton: {fileID: 789188730}
+  TeleportParticipantsButton: {fileID: 1361560486}
 --- !u!1 &670994707
 GameObject:
   m_ObjectHideFlags: 0
