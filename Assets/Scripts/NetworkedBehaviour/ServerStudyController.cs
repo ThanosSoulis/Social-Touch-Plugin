@@ -63,13 +63,17 @@ public class ServerStudyController : MonoBehaviour
             return;
         }
 
-        var imageIndex = GetEmotionalImagePanelIndex(image);
+        var panelIndex = GetEmotionalImagePanelIndex(image);
 
-        if(imageIndex < 0)
+        if(panelIndex < 0)
         {
             Debug.LogError("Unexpected Image panel requested");
             return;
         }
+
+        // Send to the correct Client the panel Index to enable
+        if (client.PlayerObject.TryGetComponent(out ClientStudyController clientStudyController))
+            clientStudyController.OpenPanelRPC(client.ClientId, participant, panelIndex);
     }
 
     public void PrepareReceiveTouch(Participant participant)
