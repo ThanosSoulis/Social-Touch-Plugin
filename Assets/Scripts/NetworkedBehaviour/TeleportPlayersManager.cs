@@ -38,6 +38,7 @@ public class TeleportPlayersManager : MonoBehaviour
             var clientID = clientPair.Key;
             var client = clientPair.Value;
 
+            // Odd number clientIDs will always be Participant B
             var spawnTransform = userTransformA;
             if (clientID % 2 != 0)
                 spawnTransform = userTransformB;
