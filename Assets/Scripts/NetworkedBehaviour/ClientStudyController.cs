@@ -15,6 +15,8 @@ public class ClientStudyController : NetworkBehaviour
     private void OnEnable()
     {
         _setupController = FindAnyObjectByType<SetupStudyController>();
+        _xruiInputModule = FindAnyObjectByType<XRUIInputModule>();
+        _uiInputModule = FindAnyObjectByType<InputSystemUIInputModule>();
     }
 
     protected override void OnNetworkPostSpawn()
