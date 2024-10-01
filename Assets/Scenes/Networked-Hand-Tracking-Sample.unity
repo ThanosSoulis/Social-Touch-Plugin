@@ -5243,6 +5243,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635944073}
   m_CullTransparentMesh: 1
+--- !u!1 &1639953234 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5024440975663525300, guid: 36fcd03af19b8d84289c6b4ef54267ba, type: 3}
+  m_PrefabInstance: {fileID: 2021207248}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1639953238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639953234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &1677537988
 GameObject:
   m_ObjectHideFlags: 0
@@ -6847,7 +6882,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5024440975663525300, guid: 36fcd03af19b8d84289c6b4ef54267ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1639953238}
   m_SourcePrefab: {fileID: 100100000, guid: 36fcd03af19b8d84289c6b4ef54267ba, type: 3}
 --- !u!1 &2106257375
 GameObject:
@@ -7148,7 +7186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2218496723442559054, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2675335803726012839, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7232,6 +7270,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4044006561593650290, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370109385682368679, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: LeapHand.FrameId
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4782346049252238203, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
@@ -7397,6 +7439,10 @@ PrefabInstance:
     - target: {fileID: 6882056573720414649, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566098035596164574, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_Name
+      value: Prepare-Initiate-HV-LA
       objectReference: {fileID: 0}
     - target: {fileID: 7936535932989435723, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: GlobalObjectIdHash
