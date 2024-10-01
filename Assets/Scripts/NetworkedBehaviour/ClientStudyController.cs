@@ -1,13 +1,17 @@
 using UnityEngine;
 using Unity.Netcode;
+using UnityEngine.InputSystem.UI;
+using UnityEngine.XR.Interaction.Toolkit.UI;
 
 public class ClientStudyController : NetworkBehaviour
 {
     private SetupStudyController _setupController;
+    private XRUIInputModule _xruiInputModule;
+    private InputSystemUIInputModule _uiInputModule;
 
     // Panels have a size of 8.
     [SerializeField] private GameObject[] participantPanels;
-
+    
     private void OnEnable()
     {
         _setupController = FindAnyObjectByType<SetupStudyController>();
@@ -16,11 +20,18 @@ public class ClientStudyController : NetworkBehaviour
     protected override void OnNetworkPostSpawn()
     {
         base.OnNetworkPostSpawn();
-
-        // Disable the Canvas if we are not the server
-        if (!IsServer)
+        
+        // Disable the XR UI Input Module if we are the server
+        if (IsServer)
+        {
+            _xruiInputModule.enabled = false;
+        }
+        
+        // Disable the Canvas & simple UI Input Module if we are the client
+        if (IsClient)
         {
             _setupController.gameObject.SetActive(false);
+            _uiInputModule.enabled = false;
         }
     }
 

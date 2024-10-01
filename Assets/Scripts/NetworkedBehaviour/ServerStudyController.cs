@@ -146,7 +146,6 @@ public class ServerStudyController : MonoBehaviour
     {
         var client = WhichParticipant(participant);
         if (client == null)
-        if (client == null)
         {
             Debug.LogError("No valid participant");
             return;

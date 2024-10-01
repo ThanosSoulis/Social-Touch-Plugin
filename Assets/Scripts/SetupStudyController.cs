@@ -12,7 +12,7 @@ public class SetupStudyController : MonoBehaviour
     private ServerStudyController _serverController;
     private TeleportPlayersManager _teleportPlayersManager;
     
-    void OnEnable()
+    void Start()
     {
         _serverController = FindAnyObjectByType<ServerStudyController>();
         if(_serverController.IsUnityNull())
@@ -34,6 +34,8 @@ public class SetupStudyController : MonoBehaviour
 
         ClosePanelsButton.onClick.AddListener(()=> {_serverController.CloseAllPanels(Participant.A); _serverController.CloseAllPanels(Participant.B);});
         TeleportParticipantsButton.onClick.AddListener(()=> _teleportPlayersManager.TeleportPlayers());
+        
+        Debug.Log("Setup Study Controller | Completed");
     }
 
     private void SetupParticipantButtons(Participant participant, Button[] buttons)
