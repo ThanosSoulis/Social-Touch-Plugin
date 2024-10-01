@@ -13,6 +13,8 @@ public class HandConnectionTracker : HandTransitionBehavior
     private XRInputModalityManager _xrInputModalityManager;
     private XRHandMeshController _leftHandMeshController, _rightHandMeshController;
 
+    [SerializeField] bool XRIHandEnabled = false;
+
     [Tooltip("When enabled, freezes the hand in its current active state")]
     public bool FreezeHandState = false;
 
@@ -43,15 +45,18 @@ public class HandConnectionTracker : HandTransitionBehavior
         if(_xrInputModalityManager == null)
             Debug.LogWarning("XR Input Modality Manager is not set - Expect errors on hand tracking status changes");
 
-        _leftHandMeshController = _xrInputModalityManager.leftHand.GetComponentInChildren<XRHandMeshController>();
-        _rightHandMeshController = _xrInputModalityManager.rightHand.GetComponentInChildren<XRHandMeshController>();
+        if(XRIHandEnabled)
+        {
+            _leftHandMeshController = _xrInputModalityManager.leftHand.GetComponentInChildren<XRHandMeshController>();
+            _rightHandMeshController = _xrInputModalityManager.rightHand.GetComponentInChildren<XRHandMeshController>();
         
-        HideXRIHand();
+            HideXRIHand();
+        }
     }
 
     void FixedUpdate()
     {
-        HideXRIHand();
+       if(XRIHandEnabled) HideXRIHand();
     }
 
     protected override void HandReset()
@@ -64,7 +69,7 @@ public class HandConnectionTracker : HandTransitionBehavior
         gameObject.SetActive(true);
         MammothRendererActivate();
 
-        HideXRIHand();  
+        if(XRIHandEnabled) HideXRIHand();  
     }
 
     protected override void HandFinish()
@@ -77,7 +82,7 @@ public class HandConnectionTracker : HandTransitionBehavior
         gameObject.SetActive(false);
         MammothRendererDeactivate();
 
-        ShowXRIHand();
+        if(XRIHandEnabled) ShowXRIHand();
     }
 
     private void HideXRIHand()

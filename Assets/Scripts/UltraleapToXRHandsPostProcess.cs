@@ -10,11 +10,13 @@ using UnityEngine.XR.Interaction.Toolkit.Inputs;
 
 public class UltraleapToXRHandsPostProcess : PostProcessProvider 
 {
-    [SerializeField] private XRInputModalityManager _xrInputModalityManager;
+    private XRInputModalityManager _xrInputModalityManager;
     private XRHandSkeletonDriver _leftHandDriver, _rightHandDriver;
 
-    private void Awake()
+    protected override void OnEnable()
     {
+        base.OnEnable();
+
         if(_xrInputModalityManager == null)
             _xrInputModalityManager = GetComponentInParent<XRInputModalityManager>();
         if(_xrInputModalityManager == null)

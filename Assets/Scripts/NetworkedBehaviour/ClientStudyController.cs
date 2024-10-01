@@ -36,7 +36,7 @@ public class ClientStudyController : NetworkBehaviour
             return;
         }
 
-        Debug.Log("Received an OpenPanel | Client ID" + clientID + " Panel ID: " + panelID + " Participant: " + participant.ToString());
+        Debug.Log("Received an OpenPanel | Client ID: " + clientID + " Panel ID: " + panelID + " Participant: " + participant.ToString());
 
 
         // Disable all Panels except the correct image panel one
