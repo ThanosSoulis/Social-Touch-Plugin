@@ -7016,6 +7016,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 75008848635352476, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 75008848635352476, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 75008848635352476, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 202970216407876561, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 202970216407876561, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 202970216407876561, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 391054340580292994, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 413708047646673886, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -7100,6 +7128,16 @@ PrefabInstance:
       propertyPath: m_RayOriginTransform
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 706896932447543069, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_text
+      value: "Your pair communicated with you to express their state of emotions.
+        Please try to describe those emotions back by touching your pair\u2019s hand.\n\nIdeally,
+        your pair experiencing the tactile stimulation will think \u201Cthis is anger!\u201D
+        or \u201Cthis is communicating happiness!\u201D depending on the received
+        emotion you want to express back.\n\nPlease remember that the touch should
+        represent the emotions that your partner elicited in you, rather than being
+        a replication of their virtual hand movement."
+      objectReference: {fileID: 0}
     - target: {fileID: 810019319561094050, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_LeftControllerTransform
       value: 
@@ -7113,20 +7151,46 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1091514762277755365, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1091514762277755365, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1091514762277755365, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149853986159286303, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_text
+      value: "Your pair is about to express their state of emotions with their touch.
+        \n\nAfter the panel disappears, keep your hand stretched in front so you
+        can both see it.\n\nPlease stand by. "
       objectReference: {fileID: 0}
     - target: {fileID: 1203898232706430911, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1304451606606206000, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304451606606206000, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304451606606206000, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 1525377159282626914, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_ControllerTransform
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1664875107151182443, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1717209007007425347, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_IsActive
@@ -7188,6 +7252,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2314911200370528252, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2339919752386342747, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.99078
@@ -7197,8 +7265,16 @@ PrefabInstance:
       value: -0.1197139
       objectReference: {fileID: 0}
     - target: {fileID: 2675335803726012839, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2675335803726012839, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2675335803726012839, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 2945826935290517874, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_AttachTransform
@@ -7272,13 +7348,45 @@ PrefabInstance:
       propertyPath: 'components.Array.data[2]'
       value: 
       objectReference: {fileID: 797477745}
+    - target: {fileID: 3885476421613893190, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885476421613893190, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885476421613893190, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3904788314156277771, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3904788314156277771, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3904788314156277771, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3910408762165081306, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4044006561593650290, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044006561593650290, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044006561593650290, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 4370109385682368679, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: LeapHand.FrameId
@@ -7456,9 +7564,21 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7497593114176423567, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7566098035596164574, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_Name
       value: Prepare-Initiate-HV-LA
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566098035596164574, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904288489332612296, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7936535932989435723, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: GlobalObjectIdHash
@@ -7471,6 +7591,14 @@ PrefabInstance:
     - target: {fileID: 8187216881355690677, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_LocalRotation.y
       value: -0.018410495
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560190686491287662, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689046241916699940, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8753040760155777594, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_LocalRotation.w
