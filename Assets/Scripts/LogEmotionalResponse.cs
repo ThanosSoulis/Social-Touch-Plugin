@@ -27,6 +27,12 @@ public class LogEmotionalResponse : MonoBehaviour
             Debug.LogError("ServerStudyController not found! : Cannot send Log RPC to Server");
             return;
         }
+        _settings = FindAnyObjectByType<StudySettings>();
+        if(_settings.IsUnityNull())
+        {
+            Debug.LogError("StudySettings not found! : Cannot log Emotional Response");
+            return;
+        }
     }
     
     // Called by the onClick of the Assess Panels
