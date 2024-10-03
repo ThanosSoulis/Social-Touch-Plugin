@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using Unity.Netcode;
 
@@ -8,14 +9,18 @@ using Unity.Netcode;
 // 5:   Prepare Respond Touch
 // 6:   Assess Input Touch
 // 7:   Assess Output Touch
-public class ServerStudyController : MonoBehaviour
+public class ServerStudyController : NetworkBehaviour
 {
-    [SerializeField] private Canvas serverControllerCanvas;
+    private int _participantPairID;
     private NetworkManager _networkManager;
+    private StudySettings _studySettings;
+    private DataLogger _dataLogger;
 
     private void Start()
     {
+        _studySettings = FindAnyObjectByType<StudySettings>();
         _networkManager = NetworkManager.Singleton;
+        _dataLogger = FindAnyObjectByType<DataLogger>();
     }
 
     private NetworkClient WhichParticipant(Participant participant)
@@ -36,24 +41,30 @@ public class ServerStudyController : MonoBehaviour
         }
         return null;
     }
-
     private int GetEmotionalImagePanelIndex(EmotionalImage image)
     {
         switch (image)
         {
-            case EmotionalImage.PositiveValenceLowArousal:
+            case EmotionalImage.HighValenceLowArousal:
                 return 0;
-            case EmotionalImage.PositiveValenceHighArousal:
+            case EmotionalImage.HighValenceHighArousal:
                 return 1;
-            case EmotionalImage.NegativaValenceLowArousal:
+            case EmotionalImage.LowValenceLowArousal:
                 return 2;
-            case EmotionalImage.NegativeValenceHighArousal:
+            case EmotionalImage.LowValenceHighArousal:
                 return 3;
             default:
                 return -1;
         }
     }
-
+    private void SetStudySettingsServer(EmotionalImage image, Participant participant)
+    {
+        _studySettings.participant = participant;
+        _studySettings.image = image;
+        _studySettings.assessmentRound++;
+        
+        //participantPairID has already been set in server
+    }
     public void PrepareInitiateTouch(EmotionalImage image, Participant participant)
     {
         var client = WhichParticipant(participant);
@@ -71,11 +82,12 @@ public class ServerStudyController : MonoBehaviour
             return;
         }
 
+        SetStudySettingsServer(image, participant);
+
         // Send to the correct Client the panel Index to enable
         if (client.PlayerObject.TryGetComponent(out ClientStudyController clientStudyController))
-            clientStudyController.OpenPanelRPC(client.ClientId, participant, panelIndex);
+            clientStudyController.OpenPanelRPC(client.ClientId, participant, _studySettings.participantPairId, panelIndex);
     }
-
     public void PrepareReceiveTouch(Participant participant)
     {
         var client = WhichParticipant(participant);
@@ -90,7 +102,7 @@ public class ServerStudyController : MonoBehaviour
         
         // Send to the correct Client the panel Index to enable
         if (client.PlayerObject.TryGetComponent(out ClientStudyController clientStudyController))
-            clientStudyController.OpenPanelRPC(client.ClientId, participant, panelIndex);
+            clientStudyController.OpenPanelRPC(client.ClientId, participant, _studySettings.participantPairId, panelIndex);
     }
     public void PrepareRespondTouch(Participant participant)
     {
@@ -106,7 +118,7 @@ public class ServerStudyController : MonoBehaviour
         
         // Send to the correct Client the panel Index to enable
         if (client.PlayerObject.TryGetComponent(out ClientStudyController clientStudyController))
-            clientStudyController.OpenPanelRPC(client.ClientId, participant, panelIndex);
+            clientStudyController.OpenPanelRPC(client.ClientId, participant, _studySettings.participantPairId, panelIndex);
     }
     public void AssessOutputTouch(Participant participant)
     {
@@ -122,9 +134,8 @@ public class ServerStudyController : MonoBehaviour
         
         // Send to the correct Client the panel Index to enable
         if (client.PlayerObject.TryGetComponent(out ClientStudyController clientStudyController))
-            clientStudyController.OpenPanelRPC(client.ClientId, participant, panelIndex);
+            clientStudyController.OpenPanelRPC(client.ClientId, participant, _studySettings.participantPairId, panelIndex);
     }
-
     public void AssessInputTouch(Participant participant)
     {
         var client = WhichParticipant(participant);
@@ -139,9 +150,8 @@ public class ServerStudyController : MonoBehaviour
         
         // Send to the correct Client the panel Index to enable
         if (client.PlayerObject.TryGetComponent(out ClientStudyController clientStudyController))
-            clientStudyController.OpenPanelRPC(client.ClientId, participant, panelIndex);
+            clientStudyController.OpenPanelRPC(client.ClientId, participant, _studySettings.participantPairId, panelIndex);
     }
-
     public void CloseAllPanels(Participant participant)
     {
         var client = WhichParticipant(participant);
@@ -155,14 +165,22 @@ public class ServerStudyController : MonoBehaviour
         if (client.PlayerObject.TryGetComponent(out ClientStudyController clientStudyController))
             clientStudyController.CloseAllPanelsRPC(client.ClientId,participant);            
     }
+
+    [Rpc(SendTo.Server)]
+    public void LogEmotionalResponseServerRPC(float valence, float arousal, Participant participant,
+        EmotionalImage image, bool isInputEmotion)
+    {
+        _dataLogger.SaveEmotionalCategorization(_studySettings.participantPairId, participant, image,
+            isInputEmotion, _studySettings.assessmentRound ,valence, arousal);
+    }
 }
 
 public enum EmotionalImage
 {
-    PositiveValenceLowArousal,
-    PositiveValenceHighArousal,
-    NegativaValenceLowArousal,
-    NegativeValenceHighArousal
+    HighValenceLowArousal,
+    HighValenceHighArousal,
+    LowValenceLowArousal,
+    LowValenceHighArousal
 }
 
 public enum Participant { A, B }
