@@ -6519,7 +6519,6 @@ PrefabInstance:
     - {fileID: 1670256624, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
     - {fileID: 2766569358201078490, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
     - {fileID: 5167925059111895691, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
-    - {fileID: 1680501586, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
@@ -6550,6 +6549,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4782346049252238203}
   m_SourcePrefab: {fileID: 100100000, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+--- !u!1 &657184242161839409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1680501586, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 657184243840976483}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2218496723442559053 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -6602,7 +6606,7 @@ MonoBehaviour:
   handsInteractableRoot: {fileID: 6686889412772800895}
   components:
   - {fileID: 7984822175165120505}
-  - {fileID: 0}
+  - {fileID: 657184242161839409}
   scripts:
   - {fileID: 0}
   - {fileID: 0}
