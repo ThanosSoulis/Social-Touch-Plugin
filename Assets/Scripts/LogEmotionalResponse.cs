@@ -40,14 +40,16 @@ public class LogEmotionalResponse : MonoBehaviour
     {
         float valence = valenceSlider.value;
         float arousal = arousalSlider.value;
+
+        var participant = (NetworkManager.Singleton.LocalClient.ClientId % 2 == 0) ? Participant.A : Participant.B;
         
-        _dataLogger.SaveEmotionalCategorization(_settings.participantPairId, _settings.participant, _settings.image, 
+        _dataLogger.SaveEmotionalCategorization(_settings.participantPairId, participant, _settings.image, 
             isInputEmotion, _settings.assessmentRound, valence, arousal);
 
         // Tell the server to Log the Emotional Categorization too.
         if (NetworkManager.Singleton.IsClient)
         {
-            _serverStudyController.LogEmotionalResponseServerRPC(valence, arousal, _settings.participant, _settings.image, isInputEmotion);
+            _serverStudyController.LogEmotionalResponseServerRPC(valence, arousal, participant, _settings.image, isInputEmotion);
         }
     }
 }
