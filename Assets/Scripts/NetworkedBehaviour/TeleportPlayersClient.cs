@@ -23,7 +23,7 @@ public class TeleportPlayersClient : NetworkBehaviour
         var newPosition = transform.position;
         var newRotation = transform.rotation;
 
-        target = transform;
+        // target = transform;
         
         print($"{nameof(TeleportPlayerRPC)}() -> {nameof(OwnerClientId)}: {OwnerClientId} --- {nameof(oldPosition)}: {oldPosition} || {nameof(oldRotation)}: {oldRotation}" +
               $" --- {nameof(newPosition)}: {newPosition} || {nameof(newRotation)}: {newRotation}");

@@ -36,7 +36,7 @@ public class ClientStudyController : NetworkBehaviour
         // Disable the Canvas & simple UI Input Module if we are the client. Initiate Logger.
         if (IsClient)
         {
-            _setupController.gameObject.SetActive(false);
+            _setupController?.gameObject.SetActive(false);
             _uiInputModule.enabled = false;
             
             _dataLogger.InitiateLoggerClient();
