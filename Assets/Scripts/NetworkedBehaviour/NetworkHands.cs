@@ -78,13 +78,13 @@ public class NetworkHands : NetworkBehaviour
         handsRendererRoot.SetActive(false);
     }
 
-    private void DisableXRComponents()
+    private void EnableXRComponents()
     {
         foreach (var component in components)
-            component.SetActive(false);
+            component.SetActive(true);
 
         foreach (var script in scripts)
-            script.enabled = false;
+            script.enabled = true;
     }
     
     public override void OnNetworkSpawn()
@@ -96,6 +96,9 @@ public class NetworkHands : NetworkBehaviour
             
             // We own the hands, so we will be sending the data across the network
             _leapProvider.OnUpdateFrame += OnUpdateFrame;
+            
+            // We need to enable the XR Components if it is the local player
+            EnableXRComponents();
             
             //Destroy model if it is not instantiated by the NetworkManager
             if (!isAutoInstantiated)
@@ -111,9 +114,6 @@ public class NetworkHands : NetworkBehaviour
             
             // We are not the owners, we should be using the Interactable hands
             AssignInteractableHands();
-            
-            // We need to shut down the XR Components if it is not the local player
-            DisableXRComponents();
             
             // We are going to be sent hand data for these hands.
             // We should control the hands through network, not from a LeapProvider
