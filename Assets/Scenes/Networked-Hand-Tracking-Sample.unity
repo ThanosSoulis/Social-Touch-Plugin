@@ -1233,7 +1233,7 @@ MonoBehaviour:
   NetworkConfig:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 212097280}
-    PlayerPrefab: {fileID: 2218496723442559054, guid: 61cd408bac71c4e13b2f9a5f3cc127d7, type: 3}
+    PlayerPrefab: {fileID: 2218496723442559054, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
     Prefabs:
       NetworkPrefabsLists:
       - {fileID: 11400000, guid: 89e6228a5ed8e4fb5b4e71ff7e343cb7, type: 2}
@@ -7835,11 +7835,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2218496723442559054, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_Name
-      value: XR-Origin-Hands-Mammoth-Local
+      value: XR-Origin-Hands-Mammoth-Networked
       objectReference: {fileID: 0}
     - target: {fileID: 2218496723442559054, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2314911200370528252, guid: 0993b461a9e3d104b91753f786b40f95, type: 3}
       propertyPath: m_IsActive
