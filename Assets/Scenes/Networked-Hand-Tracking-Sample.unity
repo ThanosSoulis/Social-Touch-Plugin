@@ -1312,7 +1312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a9bb09c4e1c04a9084dd6b71e0d9323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: Assets/Resources/Pilot-Study/Logs/
+  path: Assets/Resources/User-Study/Logs/
 --- !u!114 &212097287
 MonoBehaviour:
   m_ObjectHideFlags: 0
