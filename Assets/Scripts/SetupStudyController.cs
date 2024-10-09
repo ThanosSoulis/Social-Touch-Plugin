@@ -172,7 +172,7 @@ public class SetupStudyController : MonoBehaviour
         _serverController.CloseAllPanels(initiator);
         _serverController.CloseAllPanels(receiver);
         
-        Debug.LogErrorFormat("Condition -{0}- is Done", _studySettings?.image);
+        Debug.LogFormat("Condition -{0}- is Done", _studySettings?.image);
     }
     
 }
