@@ -2919,6 +2919,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd2a0c96d4c40e042bc0176379dc77da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InstructionsTimeInSeconds: 15
+  TouchTimeInSeconds: 15
   ParticipantAButtons:
   - {fileID: 1769179026}
   - {fileID: 1171556724}

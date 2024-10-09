@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using Unity.Netcode;
 
@@ -15,11 +14,33 @@ public class ServerStudyController : NetworkBehaviour
     private NetworkManager _networkManager;
     private StudySettings _studySettings;
     private DataLogger _dataLogger;
+    
+    private bool _a_Assessment_Done = false, _b_Assessment_Done = false;
+    private bool assessmentDone { get => _a_Assessment_Done && _b_Assessment_Done; }
+    
+    [SerializeField]
+    private TouchRound _touchRoundState;
+    public TouchRound TouchRoundState
+    {
+        get => _touchRoundState;
+    }
 
+    private void setAssessmentState(Participant participant, bool assessment)
+    {
+        if (participant == Participant.A)
+            _a_Assessment_Done = assessment;
+        if (participant == Participant.B)
+            _b_Assessment_Done = assessment;
+        
+        // Increment Touch Round state : Respond if the previous was the Start round, Acknowledge otherwise as the last round.
+        if(assessmentDone)
+            _touchRoundState = (_touchRoundState == TouchRound.Start) ? TouchRound.Response : TouchRound.Acknowledge;
+    }
+    
     private void Start()
     {
-        _studySettings = FindAnyObjectByType<StudySettings>();
         _networkManager = NetworkManager.Singleton;
+        _studySettings = FindAnyObjectByType<StudySettings>();
         _dataLogger = FindAnyObjectByType<DataLogger>();
     }
 
@@ -34,7 +55,7 @@ public class ServerStudyController : NetworkBehaviour
             if (participant == Participant.A && clientID % 2 == 0)
                 return client;
             // Participant B
-            else if (participant == Participant.B && clientID % 2 != 0)
+            if (participant == Participant.B && clientID % 2 != 0)
                 return client;
 
             Debug.LogWarning("Expected -- Participant " + participant.ToString() + " is not running on ClientID: " + clientID);
@@ -83,6 +104,12 @@ public class ServerStudyController : NetworkBehaviour
         }
 
         SetStudySettingsServer(image, participant);
+        
+        // Reset the state so the Participant can assess the touch they output
+        setAssessmentState(participant, false);
+
+        // Initialise the Touch Round state
+        _touchRoundState = TouchRound.Start;
 
         // Send to the correct Client the panel Index to enable
         if (client.PlayerObject.TryGetComponent(out ClientStudyController clientStudyController))
@@ -100,6 +127,9 @@ public class ServerStudyController : NetworkBehaviour
         // Enable the 5th Client panel
         var panelIndex = 4;
         
+        // Reset the state so the Participant can assess the touch they receive
+        setAssessmentState(participant, false);
+        
         // Send to the correct Client the panel Index to enable
         if (client.PlayerObject.TryGetComponent(out ClientStudyController clientStudyController))
             clientStudyController.OpenPanelRPC(client.ClientId, participant, _studySettings.participantPairId, panelIndex);
@@ -115,7 +145,10 @@ public class ServerStudyController : NetworkBehaviour
 
         // Enable the 6th Client panel
         var panelIndex = 5;
-        
+
+        // Reset the state so the Participant can assess the touch they output
+        setAssessmentState(participant, false);
+
         // Send to the correct Client the panel Index to enable
         if (client.PlayerObject.TryGetComponent(out ClientStudyController clientStudyController))
             clientStudyController.OpenPanelRPC(client.ClientId, participant, _studySettings.participantPairId, panelIndex);
@@ -170,8 +203,12 @@ public class ServerStudyController : NetworkBehaviour
     public void LogEmotionalResponseServerRPC(float valence, float arousal, Participant participant,
         EmotionalImage image, bool isInputEmotion)
     {
+        // Save the data locally
         _dataLogger.SaveEmotionalCategorization(_studySettings.participantPairId, participant, image,
             isInputEmotion, _studySettings.assessmentRound ,valence, arousal);
+        
+        // Save the assessment state for Participant
+        setAssessmentState(participant, true);
     }
 }
 
@@ -184,3 +221,4 @@ public enum EmotionalImage
 }
 
 public enum Participant { A, B }
+public enum TouchRound { Start, Response, Acknowledge }
