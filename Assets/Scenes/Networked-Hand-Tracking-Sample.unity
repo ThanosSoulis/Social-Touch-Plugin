@@ -584,7 +584,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A | Prepare  Negative Valence - High Arousal
+  m_text: A | Prepare Low Valence - High Arousal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -874,7 +874,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: B | Prepare  Negative Valence - High Arousal
+  m_text: B | Prepare  Low Valence - High Arousal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1995,7 +1995,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A | Prepare Positive Valence - High Arousal
+  m_text: A | Prepare High Valence - High Arousal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2238,7 +2238,7 @@ GameObject:
   - component: {fileID: 461960397}
   - component: {fileID: 461960396}
   m_Layer: 5
-  m_Name: Prepare-PosVal-HighArou-B
+  m_Name: Prepare-HighVal-HighArou-B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2359,7 +2359,7 @@ GameObject:
   - component: {fileID: 527525440}
   - component: {fileID: 527525439}
   m_Layer: 5
-  m_Name: Prepare-PosVal-LowArou-B
+  m_Name: Prepare-HighVal-LowArou-B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2524,7 +2524,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'A | Prepare Positive Valence - Low Arousal '
+  m_text: 'A | Prepare High Valence - Low Arousal '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3374,7 +3374,7 @@ GameObject:
   - component: {fileID: 764145061}
   - component: {fileID: 764145060}
   m_Layer: 5
-  m_Name: Prepare-NegVal-HighArou-B
+  m_Name: Prepare-LowVal-HighArou-B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3917,7 +3917,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A | Prepare  Negative Valence - Low Arousal
+  m_text: A | Prepare Low Valence - Low Arousal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4369,7 +4369,7 @@ GameObject:
   - component: {fileID: 1039277127}
   - component: {fileID: 1039277126}
   m_Layer: 5
-  m_Name: Prepare-NegVal-LowArou-A
+  m_Name: Prepare-LowVal-LowArou-A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4678,7 +4678,7 @@ GameObject:
   - component: {fileID: 1171556725}
   - component: {fileID: 1171556724}
   m_Layer: 5
-  m_Name: Prepare-PosVal-HighArou-A
+  m_Name: Prepare-HighVal-HighArou-A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4907,7 +4907,7 @@ GameObject:
   - component: {fileID: 1184028141}
   - component: {fileID: 1184028140}
   m_Layer: 5
-  m_Name: Prepare-NegVal-LowArou-B
+  m_Name: Prepare-LowVal-LowArou-B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5072,7 +5072,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: B | Prepare Positive Valence - Low Arousal
+  m_text: B | Prepare High Valence - Low Arousal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5164,7 +5164,7 @@ GameObject:
   - component: {fileID: 1347520641}
   - component: {fileID: 1347520640}
   m_Layer: 5
-  m_Name: Prepare-NegVal-HighArou-A
+  m_Name: Prepare-LowVal-HighArou-A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5603,6 +5603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce92f9e4a9c91214d9c0d410cead5abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _touchRoundState: 0
 --- !u!4 &1575715186
 Transform:
   m_ObjectHideFlags: 0
@@ -6154,7 +6155,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: B | Prepare Positive Valence - High Arousal
+  m_text: B | Prepare High Valence - High Arousal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6290,7 +6291,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: B | Prepare  Negative Valence - Low Arousal
+  m_text: B | Prepare  Low Valence - Low Arousal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6382,7 +6383,7 @@ GameObject:
   - component: {fileID: 1769179027}
   - component: {fileID: 1769179026}
   m_Layer: 5
-  m_Name: Prepare-PosVal-LowArou-A
+  m_Name: Prepare-HighVal-LowArou-A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
