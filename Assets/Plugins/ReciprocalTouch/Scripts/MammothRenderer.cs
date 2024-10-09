@@ -101,7 +101,7 @@ public class MammothRenderer : MonoBehaviour
     private void ShortestPath()
     {
         // Smoothing: remove points within MinSmoothingSeparation from each other
-        _bufferPointsCount = GraphFilters.SmoothPoints(_bufferPoints, _bufferPointsCount, MinSmoothingSeparation);
+        _bufferPointsCount = GraphFilters.SmoothPoints(_bufferPoints, _bufferPointsCount > PointBufferSize ? PointBufferSize :_bufferPointsCount, MinSmoothingSeparation);
 
         // 2-Opt algorithm
         float distance = MathT.TwoOpt(_bufferPoints, _bufferPointsCount, 5);
