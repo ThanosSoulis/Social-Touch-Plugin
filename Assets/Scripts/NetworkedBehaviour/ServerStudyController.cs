@@ -33,8 +33,23 @@ public class ServerStudyController : NetworkBehaviour
             _b_Assessment_Done = assessment;
         
         // Increment Touch Round state : Respond if the previous was the Start round, Acknowledge otherwise as the last round.
-        if(assessmentDone)
-            _touchRoundState = (_touchRoundState == TouchRound.Start) ? TouchRound.Response : TouchRound.Acknowledge;
+        if (assessmentDone)
+        {
+            switch (_touchRoundState)
+            {
+                case TouchRound.Start:
+                    _touchRoundState = TouchRound.Response;
+                    break;
+                case TouchRound.Response:
+                    _touchRoundState = TouchRound.Acknowledge;
+                    break;
+                case TouchRound.Acknowledge:
+                    _touchRoundState = TouchRound.Done;
+                    break;
+                case TouchRound.Done:
+                    break;
+            }
+        }
     }
     
     private void Start()
@@ -221,4 +236,4 @@ public enum EmotionalImage
 }
 
 public enum Participant { A, B }
-public enum TouchRound { Start, Response, Acknowledge }
+public enum TouchRound { Start, Response, Acknowledge, Done }

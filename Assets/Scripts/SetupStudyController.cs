@@ -21,6 +21,7 @@ public class SetupStudyController : MonoBehaviour
     private ServerStudyController _serverController;
     private TeleportPlayersManager _teleportPlayersManager;
     private DataLogger _dataLogger;
+    private StudySettings _studySettings;
     
     // Timer implementation
     // ====================================
@@ -51,7 +52,6 @@ public class SetupStudyController : MonoBehaviour
         {
             yield return null;
         }
-        Debug.Log("Finally I am free");
         callback?.Invoke(a,b);
     }
     
@@ -74,10 +74,17 @@ public class SetupStudyController : MonoBehaviour
         _dataLogger = FindAnyObjectByType<DataLogger>();
         if(_dataLogger.IsUnityNull())
         {
-            Debug.LogError("Data Logger not found! : Cannot Log Shieeeet");
+            Debug.LogError("Data Logger not found! : Cannot Log Anything");
             return;
         }
 
+        _studySettings = FindAnyObjectByType<StudySettings>();
+        if(_dataLogger.IsUnityNull())
+        {
+            Debug.LogWarning("Study Settings not found - That is ok");
+            return;
+        }
+        
         SetupParticipantButtons(Participant.A, ParticipantAButtons);
         SetupParticipantButtons(Participant.B, ParticipantBButtons);
 
@@ -91,7 +98,7 @@ public class SetupStudyController : MonoBehaviour
         
         Debug.Log("Setup Study Controller | Completed");
     }
-
+    
     private void SetupParticipantButtons(Participant participant, Button[] buttons)
     {
         buttons[0].onClick.AddListener(() =>SetupPrepareInitiateTouch(EmotionalImage.HighValenceLowArousal, participant));
@@ -124,10 +131,12 @@ public class SetupStudyController : MonoBehaviour
         
         // Setting up the response from the Receiver 
         StartWatching(() => _serverController.TouchRoundState == TouchRound.Response, SetupRespondTouch, receiver, initiator);
-        Debug.Log("Setup awaiting Response state");
+
         // Setting up the final response from the Initiator
         StartWatching(() => _serverController.TouchRoundState == TouchRound.Acknowledge, SetupRespondTouch, initiator, receiver);
-        Debug.Log("Setup awaiting Acknowledge state");
+
+        // Log when a Condition is Done
+        StartWatching(() => _serverController.TouchRoundState == TouchRound.Done, LogConditionDone, initiator, receiver);
     }
     
     // Preparing for a Respond to initial touch.
@@ -156,6 +165,14 @@ public class SetupStudyController : MonoBehaviour
     {
         _serverController.AssessInputTouch(receiver);
         _serverController.AssessOutputTouch(initiator);
+    }
+
+    private void LogConditionDone(Participant initiator, Participant receiver)
+    {
+        _serverController.CloseAllPanels(initiator);
+        _serverController.CloseAllPanels(receiver);
+        
+        Debug.LogErrorFormat("Condition -{0}- is Done", _studySettings?.image);
     }
     
 }
