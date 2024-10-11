@@ -66,7 +66,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 225}
+  m_SizeDelta: {x: 300, y: 225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2054099136797942198
 CanvasRenderer:
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_text: "Your pair touched your hand to show emotions. Now, show how you interpret
     those emotions back to your pair with your own touch.\n\nYour pair should be
     able to think, 'this feels like anger' or 'this feels like happiness\u2019 based
-    on your touch. Remember, your touch should show the emotions you interpreted
+    on your touch. \n\nRemember, your touch should show the emotions you interpreted
     from your pair, not copy their hand movements."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 10
-  m_fontSizeMax: 18
+  m_fontSizeMax: 15
   m_fontStyle: 0
   m_HorizontalAlignment: 8
   m_VerticalAlignment: 512
@@ -3008,7 +3008,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 200}
+  m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6783510623435208411
 CanvasRenderer:
@@ -3073,7 +3073,7 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 10
-  m_fontSizeMax: 18
+  m_fontSizeMax: 15
   m_fontStyle: 0
   m_HorizontalAlignment: 8
   m_VerticalAlignment: 512
@@ -14679,7 +14679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 154756844121072440, guid: 218f692b81b07e340ab16a251a8c64f8, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 400
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 154756844121072440, guid: 218f692b81b07e340ab16a251a8c64f8, type: 3}
       propertyPath: m_SizeDelta.y
@@ -14761,11 +14761,19 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -150
       objectReference: {fileID: 0}
+    - target: {fileID: 2307037187555403271, guid: 218f692b81b07e340ab16a251a8c64f8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 130
+      objectReference: {fileID: 0}
     - target: {fileID: 3016216608036495652, guid: 218f692b81b07e340ab16a251a8c64f8, type: 3}
       propertyPath: m_text
-      value: Your pair touched you to express emotion. Think about your interpretation
-        of that emotion, then use your Index finger to rate it on both sliders. Press
-        Submit when you are done.
+      value: "Your pair touched you to express emotion. \n\nThink about your interpretation
+        of that emotion, then use your Index finger to \nrate it on both sliders.
+        \n\nPress Submit when you are done."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016216608036495652, guid: 218f692b81b07e340ab16a251a8c64f8, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3757608303780624056, guid: 218f692b81b07e340ab16a251a8c64f8, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -15014,6 +15022,23 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3107347522491806415, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
+      propertyPath: m_text
+      value: "Look at the picture on your right; it might make you feel certain emotions.
+        Try to interpret those emotions and show them by touching your pair's hand.
+        \n\nYour pair should be able to think, 'this feels like anger' or 'this feels
+        like happiness\u2019 based on your touch. \n\nRemember, your touch should
+        show the emotions you interpreted from the picture, not describe the picture
+        with gestures."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4099290025080156165, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
       propertyPath: m_SizeDelta.x
       value: 1500
@@ -15156,6 +15181,23 @@ PrefabInstance:
       propertyPath: m_Texture
       value: 
       objectReference: {fileID: 2800000, guid: 83b09f98ab40d49b580686a515b34d5f, type: 3}
+    - target: {fileID: 3107347522491806415, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
+      propertyPath: m_text
+      value: "Look at the picture on your right; it might make you feel certain emotions.
+        Try to interpret those emotions and show them by touching your pair's hand.\n
+        \nYour pair should be able to think, 'this feels like anger' or 'this feels
+        like happiness\u2019 based on your touch. \n\nRemember, your touch should
+        show the emotions you interpreted from the picture, not describe the picture
+        with gestures."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4099290025080156165, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
       propertyPath: m_SizeDelta.x
       value: 1500
@@ -15300,7 +15342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 154756844121072440, guid: 218f692b81b07e340ab16a251a8c64f8, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 400
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 154756844121072440, guid: 218f692b81b07e340ab16a251a8c64f8, type: 3}
       propertyPath: m_SizeDelta.y
@@ -15378,11 +15420,19 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -150
       objectReference: {fileID: 0}
+    - target: {fileID: 2307037187555403271, guid: 218f692b81b07e340ab16a251a8c64f8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 130
+      objectReference: {fileID: 0}
     - target: {fileID: 3016216608036495652, guid: 218f692b81b07e340ab16a251a8c64f8, type: 3}
       propertyPath: m_text
-      value: You touched your pair showing an interpretation of an emotion. Think
+      value: "You touched your pair showing an interpretation of an emotion.\n\nThink
         about this emotion, then use your Index finger to rate it on both sliders.
-        Press Submit when you are done.
+        \n\nPress Submit when you are done."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016216608036495652, guid: 218f692b81b07e340ab16a251a8c64f8, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3757608303780624056, guid: 218f692b81b07e340ab16a251a8c64f8, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -20585,6 +20635,27 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3107347522491806415, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
+      propertyPath: m_text
+      value: "Look at the picture on your right; it might make you feel certain emotions.
+        Try to interpret those emotions and show them by touching your pair's hand.
+        \n\nYour pair should be able to think, 'this feels like anger' or 'this feels
+        like happiness\u2019 based on your touch. \n\nRemember, your touch should
+        show the emotions you interpreted from the picture, not describe the picture
+        with gestures."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4099290025080156165, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
       propertyPath: m_SizeDelta.x
       value: 1500
@@ -20738,6 +20809,23 @@ PrefabInstance:
     - target: {fileID: 2634975150163560857, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107347522491806415, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
+      propertyPath: m_text
+      value: "Look at the picture on your right; it might make you feel certain emotions.
+        Try to interpret those emotions and show them by touching your pair's hand.
+        \n\nYour pair should be able to think, 'this feels like anger' or 'this feels
+        like happiness\u2019 based on your touch. \n\nRemember, your touch should
+        show the emotions you interpreted from the picture, not describe the picture
+        with gestures."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4099290025080156165, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
       propertyPath: m_SizeDelta.x
