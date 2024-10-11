@@ -858,13 +858,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "You are shown a picture, which might elicit emotions in you. Please try
-    to describe those emotions by touching your pair\u2019s hand.\n\nIdeally, your
-    pair experiencing the tactile stimulation will think \u201Cthis is anger!\u201D
-    or \u201Cthis is communicating happiness!\u201D depending on the emotion you
-    want to express. \n\nPlease remember that the touch should represent the emotions
-    that the picture is eliciting in you, rather than being a description of the
-    picture itself."
+  m_text: "Look at the picture on your right; it might make you feel certain emotions.
+    Try to show this emotional interpretation by touching your pair's hand. \nYour
+    pair should be able to think, 'this feels like anger' or 'this feels like happiness\u2019
+    based on your touch. Remember, your touch should show the emotions you interpreted
+    from the picture, not describe the picture with gestures."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -891,7 +889,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16.3
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1357,16 +1355,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8487193811560813874}
-  m_LocalRotation: {x: -0.009440966, y: 0.21623361, z: -0.04258545, w: 0.9753669}
-  m_LocalPosition: {x: 0, y: 0, z: -30}
+  m_LocalRotation: {x: -0.008516643, y: 0.1409685, z: -0.012448564, w: 0.98989916}
+  m_LocalPosition: {x: 0, y: 0, z: -46}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8140984561788614689}
-  m_LocalEulerAnglesHint: {x: 0, y: 25, z: -5}
+  m_LocalEulerAnglesHint: {x: -0.765, y: 16.22, z: -1.55}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 449, y: -0}
+  m_AnchoredPosition: {x: 376, y: 5}
   m_SizeDelta: {x: 500, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &616062423965087204
