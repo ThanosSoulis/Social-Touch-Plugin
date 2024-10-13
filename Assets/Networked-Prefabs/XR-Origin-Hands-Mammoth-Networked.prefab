@@ -96,11 +96,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Your pair touched your hand to show emotions. Now, show how you interpret
-    those emotions back to your pair with your own touch.\n\nYour pair should be
-    able to think, 'this feels like anger' or 'this feels like happiness\u2019 based
-    on your touch. \n\nRemember, your touch should show the emotions you interpreted
-    from your pair, not copy their hand movements."
+  m_text: "Your pair touched your hand to show emotions. \n\nShow how you interpret
+    those emotions (e.g. happiness, anger) back to your pair with your own touch.
+    \n\nFocus on expressing the emotions you interpret from your pair with your touch,
+    not copy their hand movements."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -127,7 +126,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15028,12 +15027,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
       propertyPath: m_text
-      value: "Look at the picture on your right; it might make you feel certain emotions.
-        Try to interpret those emotions and show them by touching your pair's hand.
-        \n\nYour pair should be able to think, 'this feels like anger' or 'this feels
-        like happiness\u2019 based on your touch. \n\nRemember, your touch should
-        show the emotions you interpreted from the picture, not describe the picture
-        with gestures."
+      value: "Look at the picture on your right; it might make you feel certain emotions.\n\nShow
+        your emotional interpretation of the picture  (e.g. happiness, anger) by
+        touching your partner's hand in any way you think. \n\nDo not describe the
+        picture by gesturing."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
+      propertyPath: m_fontSize
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
       propertyPath: m_fontSizeMax
@@ -15187,12 +15188,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
       propertyPath: m_text
-      value: "Look at the picture on your right; it might make you feel certain emotions.
-        Try to interpret those emotions and show them by touching your pair's hand.\n
-        \nYour pair should be able to think, 'this feels like anger' or 'this feels
-        like happiness\u2019 based on your touch. \n\nRemember, your touch should
-        show the emotions you interpreted from the picture, not describe the picture
-        with gestures."
+      value: "Look at the picture on your right; it might make you feel certain emotions.\n\nShow
+        your emotional interpretation of the picture  (e.g. happiness, anger) by
+        touching your partner's hand in any way you think. \n\nDo not describe the
+        picture by gesturing."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
+      propertyPath: m_fontSize
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
       propertyPath: m_fontSizeMax
@@ -20641,16 +20644,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
       propertyPath: m_text
-      value: "Look at the picture on your right; it might make you feel certain emotions.
-        Try to interpret those emotions and show them by touching your pair's hand.
-        \n\nYour pair should be able to think, 'this feels like anger' or 'this feels
-        like happiness\u2019 based on your touch. \n\nRemember, your touch should
-        show the emotions you interpreted from the picture, not describe the picture
-        with gestures."
+      value: "Look at the picture on your right; it might make you feel certain emotions.\n\nShow
+        your emotional interpretation of the picture  (e.g. happiness, anger) by
+        touching your partner's hand in any way you think. \n\nDo not describe the
+        picture by gesturing."
       objectReference: {fileID: 0}
     - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
       propertyPath: m_fontSize
-      value: 36
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
       propertyPath: m_fontSizeMax
@@ -20816,12 +20817,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
       propertyPath: m_text
-      value: "Look at the picture on your right; it might make you feel certain emotions.
-        Try to interpret those emotions and show them by touching your pair's hand.
-        \n\nYour pair should be able to think, 'this feels like anger' or 'this feels
-        like happiness\u2019 based on your touch. \n\nRemember, your touch should
-        show the emotions you interpreted from the picture, not describe the picture
-        with gestures."
+      value: "Look at the picture on your right; it might make you feel certain emotions.\n\nShow
+        your emotional interpretation of the picture  (e.g. happiness, anger) by
+        touching your partner's hand in any way you think. \n\nDo not describe the
+        picture by gesturing."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
+      propertyPath: m_fontSize
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3724658259844591175, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
       propertyPath: m_fontSizeMax
