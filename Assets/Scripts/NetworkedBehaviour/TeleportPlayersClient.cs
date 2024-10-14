@@ -10,13 +10,6 @@ public class TeleportPlayersClient : NetworkBehaviour
     [SerializeField] KeyCode recenterButton = KeyCode.Space;
     [SerializeField] Transform target;
 
-    private ClientStudyController _clientStudyController;
-
-    private void OnEnable()
-    {
-        _clientStudyController = FindAnyObjectByType<ClientStudyController>();
-    }
-
     [Rpc(SendTo.Server)]
     public void TeleportPlayerRPC(ulong clientID, Vector3 teleportPos, Quaternion teleportRot)
     {
@@ -31,8 +24,6 @@ public class TeleportPlayersClient : NetworkBehaviour
         var newRotation = transform.rotation;
 
         target = transform;
-
-        _clientStudyController.OpenExperimentStartPanel();
         
         print($"{nameof(TeleportPlayerRPC)}() -> {nameof(OwnerClientId)}: {OwnerClientId} --- {nameof(oldPosition)}: {oldPosition} || {nameof(oldRotation)}: {oldRotation}" +
               $" --- {nameof(newPosition)}: {newPosition} || {nameof(newRotation)}: {newRotation}");
