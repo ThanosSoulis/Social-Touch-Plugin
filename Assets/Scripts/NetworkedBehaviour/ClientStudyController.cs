@@ -14,6 +14,8 @@ public class ClientStudyController : NetworkBehaviour
     // Panels have a size of 8.
     [SerializeField] private GameObject[] participantPanels;
     [SerializeField] private GameObject experimentStartPanel;
+
+    private AudioSource _pinkNoiseSource;
     
     private void OnEnable()
     {
@@ -22,6 +24,10 @@ public class ClientStudyController : NetworkBehaviour
         _uiInputModule = FindAnyObjectByType<InputSystemUIInputModule>();
         _studySettings = FindAnyObjectByType<StudySettings>();
         _dataLogger = FindAnyObjectByType<DataLogger>();
+
+        
+        if(_pinkNoiseSource == null)
+            _pinkNoiseSource = GetComponent<AudioSource>();
     }
 
     protected override void OnNetworkPostSpawn()
@@ -41,6 +47,13 @@ public class ClientStudyController : NetworkBehaviour
             _uiInputModule.enabled = false;
             
             _dataLogger.InitiateLoggerClient();
+
+            // Stop the Pink Noise Source if we are not the owner
+            if (!IsOwner)
+            {
+                _pinkNoiseSource.loop = false;
+                _pinkNoiseSource.Stop();
+            }
         }
     }
 
