@@ -13,6 +13,7 @@ public class ClientStudyController : NetworkBehaviour
 
     // Panels have a size of 8.
     [SerializeField] private GameObject[] participantPanels;
+    [SerializeField] private GameObject experimentStartPanel;
     
     private void OnEnable()
     {
@@ -43,6 +44,16 @@ public class ClientStudyController : NetworkBehaviour
         }
     }
 
+    public void OpenExperimentStartPanel()
+    {
+        experimentStartPanel.SetActive(true);
+    }
+
+    private void CloseExperimentStartPanel()
+    {
+        experimentStartPanel.SetActive(false);
+    }
+
     [Rpc(SendTo.NotServer)]
     public void OpenPanelRPC(ulong clientID, Participant participant, int participantPairId ,int panelID)
     {
@@ -62,6 +73,8 @@ public class ClientStudyController : NetworkBehaviour
         // Disable all Panels except the correct image panel one
         for (int i = 0; i < participantPanels.Length; i++)
             participantPanels[i].SetActive(i==panelID);
+        
+        CloseExperimentStartPanel();
     }
     
     [Rpc(SendTo.NotServer)]
@@ -73,6 +86,8 @@ public class ClientStudyController : NetworkBehaviour
         // Disable all Panels
         for (int i = 0; i < participantPanels.Length; i++)
             participantPanels[i].SetActive(false);
+        
+        CloseExperimentStartPanel();
 
         Debug.Log("Closed All Panels");
     }
