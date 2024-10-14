@@ -48,7 +48,7 @@ public class TeleportPlayersManager : MonoBehaviour
             
             // Opens the Experiment Starts Panel on Client <--- hacky way of doing that but w/e
             if (client.PlayerObject.TryGetComponent(out ClientStudyController clientStudyController))
-                clientStudyController.OpenExperimentStartPanel();
+                clientStudyController.OpenExperimentStartPanelRPC(clientID);
 
         }
     }

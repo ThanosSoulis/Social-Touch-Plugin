@@ -44,8 +44,12 @@ public class ClientStudyController : NetworkBehaviour
         }
     }
 
-    public void OpenExperimentStartPanel()
+    [Rpc(SendTo.NotServer)]
+    public void OpenExperimentStartPanelRPC(ulong clientID)
     {
+        if(OwnerClientId != clientID)
+            return;
+        
         experimentStartPanel.SetActive(true);
     }
 
