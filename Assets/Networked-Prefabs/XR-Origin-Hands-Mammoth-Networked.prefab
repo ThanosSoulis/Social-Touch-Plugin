@@ -9170,7 +9170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1366750959
+  GlobalObjectIdHash: 3327225894
   InScenePlacedSourceGlobalObjectIdHash: 1366750959
   DeferredDespawnTick: 0
   Ownership: 1
@@ -15277,6 +15277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5537632453397262980, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
+    - {fileID: 3808895103143738757, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
     m_RemovedGameObjects:
     - {fileID: 8487193811560813874, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
     - {fileID: 9041476872447288044, guid: 85174e2bc12a8c640a8a9961cb59f251, type: 3}
