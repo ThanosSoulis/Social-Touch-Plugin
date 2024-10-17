@@ -57,6 +57,16 @@ public class ClientStudyController : NetworkBehaviour
         }
     }
 
+    public override void OnNetworkDespawn()
+    {
+        base.OnNetworkDespawn();
+        
+        // Closing the Logger when disconnected
+        if (IsClient && IsOwner)
+            _dataLogger.CloseWriter();
+    }
+    
+
     [Rpc(SendTo.NotServer)]
     public void OpenExperimentStartPanelRPC(ulong clientID)
     {

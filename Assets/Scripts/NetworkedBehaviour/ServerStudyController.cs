@@ -57,6 +57,10 @@ public class ServerStudyController : NetworkBehaviour
         _networkManager = NetworkManager.Singleton;
         _studySettings = FindAnyObjectByType<StudySettings>();
         _dataLogger = FindAnyObjectByType<DataLogger>();
+        
+        // Closing DataLogger when Server is stopped
+        _networkManager.OnServerStopped += b => { _dataLogger.CloseWriter();};
+
     }
 
     private NetworkClient WhichParticipant(Participant participant)
